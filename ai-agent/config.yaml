@@ -26,7 +26,7 @@ options:
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)
   interval_seconds: int(10,)
-  provider: list(gemini|claude|openai)
+  provider: list(gemini|claude|openai|openrouter)
   api_key: str
   model: str?
   max_tokens: int(1,)

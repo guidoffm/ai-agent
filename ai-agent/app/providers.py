@@ -40,6 +40,12 @@ class OpenAIProvider(Provider):
         return resp.json()["choices"][0]["message"]["content"]
 
 
+class OpenRouterProvider(OpenAIProvider):
+    name = "openrouter"
+    URL = "https://openrouter.ai/api/v1/chat/completions"
+    DEFAULT_MODEL = "anthropic/claude-sonnet-4-6"
+
+
 class ClaudeProvider(Provider):
     name = "claude"
     URL = "https://api.anthropic.com/v1/messages"
@@ -109,6 +115,7 @@ _REGISTRY = {
     "anthropic": ClaudeProvider,
     "gemini": GeminiProvider,
     "google": GeminiProvider,
+    "openrouter": OpenRouterProvider,
 }
 
 
